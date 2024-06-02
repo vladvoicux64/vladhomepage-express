@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+
+<nav class="centered navbar">
+    <input type="checkbox" id="expand">
+    <label for="expand"></label>
+    <div class="navbar_links">
+        <a href="https://vladvoicux64.github.io/vladhomepage/">Home</a>
+        <a href="https://vladvoicux64.github.io/10yrlb/">Loading Bar</a>
+        <a class="active" href="/panel">Post</a>
+    </div>
+</nav>
+
+<header class="centered">
+    <p>
+        This is the login page. It is dedicated solely to admins who are able to post here.
+    </p>
+</header>
+
+<form class="centered neat" id="loginForm" method="post" action="/login" enctype='multipart/form-data'>
+    <fieldset>
+        <label for="username">Username:</label><br>
+        <input type="text" name="username" value="">
+        <br>
+        <label for="password">Password:</label><br>
+        <input type="password" name="password" value="">
+        <br>
+        <br>
+        <input type="submit" value="Submit">
+    </fieldset>
+</form>
+
+<script src="/javascripts/login.js"></script>
+
+</body>
+</html>
