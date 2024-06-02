@@ -47,7 +47,7 @@ window.onload = function(){
         if(!had_err)
         {
             err.innerHTML = '';
-            err.style.visibility = "hidden";
+            err.style.visibility = 'hidden';
         }
     }
     document.getElementById("form_button").addEventListener('mouseover', function(e){
