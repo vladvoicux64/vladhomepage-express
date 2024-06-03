@@ -91,7 +91,6 @@ window.onload = function(){
         }
     })
     button.addEventListener('mouseover', function(e){
-        e.stopPropagation();
         validate_save();
     })
 }

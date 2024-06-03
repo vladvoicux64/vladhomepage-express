@@ -34,8 +34,8 @@ router.post('/', function(req, res) {
                 category.articles.push(article);
             }
         }
-        fs.writeFileSync('public/articles.json', JSON.stringify(articles, null, 0), 'utf8');
-        res.end();
+        fs.writeFileSync('public/articles.json', JSON.stringify(articles, null, 4), 'utf8');
+        res.redirect('/');
     });
 });
 
