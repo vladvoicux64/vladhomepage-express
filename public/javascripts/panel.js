@@ -1,68 +1,99 @@
+function isValidUrl(string) {
+    try {
+        new URL(string);
+        return true;
+    } catch (err) {
+        return false;
+    }
+}
+
+const button = document.getElementById("form_button");
+const title = document.getElementById("title");
+const desc = document.getElementById("description");
+const url = document.getElementById("url");
+
+function validate_save() {
+    const err = document.getElementById("err");
+    const regex_title = /^[a-zA-Z0-9_].{5,50}$/;
+    const regex_desc = /^[a-zA-Z0-9_].{30,500}$/;
+    let had_err = false;
+
+    localStorage.setItem("title", title.value);
+    localStorage.setItem("desc", desc.value);
+    localStorage.setItem("url", url.value);
+
+    function treat_err(myerr)
+    {
+        err.appendChild(myerr);
+        err.style.visibility = 'visible';
+        had_err = true;
+        button.disabled = true;
+    }
+
+    if(!regex_title.test(title.value))
+    {
+        let myerr = document.createElement("p");
+        myerr.innerText="The title is required to be between 5 and 50 alphanumeric characters in lenght, including dashes and underscores.";
+        treat_err(myerr);
+    }
+    if(!regex_desc.test(desc.value))
+    {
+        let myerr = document.createElement("p");
+        myerr.innerText="The description is required to be between 30 and 500 alphanumeric characters in lenght, including dashes and underscores.";
+        treat_err(myerr)
+    }
+    if(!isValidUrl(url.value))
+    {
+        let myerr = document.createElement("p");
+        myerr.innerText="A valid URL is required.";
+        treat_err(myerr);
+    }
+    if(!had_err)
+    {
+        err.innerHTML = '';
+        err.style.visibility = 'hidden';
+        button.disabled = false;
+    }
+}
+
 window.onload = function(){
-    function isValidUrl(string) {
-        try {
-            new URL(string);
-            return true;
-        } catch (err) {
-            return false;
-        }
+
+    if(localStorage.getItem("title"))
+    {
+        title.value = localStorage.getItem("title");
+    }
+    if(localStorage.getItem("desc"))
+    {
+        desc.value = localStorage.getItem("desc");
+    }
+    if(localStorage.getItem("url"))
+    {
+        url.value = localStorage.getItem("url");
     }
 
-    function validate() {
-        const err = document.getElementById("err");
-        let title = document.getElementById("title").value;
-        const regex_title = /^[a-zA-Z0-9_].{5,50}$/;
-        console.log("a");
-        let desc = document.getElementById("description").value;
-        const regex_desc = /^[a-zA-Z0-9_].{30,500}$/;
-        console.log("a");
-        let url = document.getElementById("url").value;
-        console.log("a");
-        let had_err = false;
-
-        if(!regex_title.test(title))
+    const articles = fetch('articles.json');
+    articles.then(response =>
+    {
+        if (!response.ok)
         {
-            let myerr = document.createElement("p");
-            myerr.innerText="The title is required to be between 5 and 50 alphanumeric characters in lenght, including dashes and underscores.";
-            err.appendChild(myerr);
-            err.style.visibility = 'visible';
-            had_err = true;
+            throw Error('Failed to load articles.');
         }
-        if(!regex_desc.test(desc))
+        else return response.json();
+    }).then(articles =>
+    {
+        const select = document.getElementById("category");
+        let is_first = true;
+        for (const category of articles.categories)
         {
-            let myerr = document.createElement("p");
-            myerr.innerText="The description is required to be between 30 and 500 alphanumeric characters in lenght, including dashes and underscores.";
-            err.appendChild(myerr);
-            err.style.visibility = 'visible';
-            had_err = true;
+            let title = category.name;
+            let option = document.createElement("option");
+            option.value = category.name;
+            option.innerText = category.name;
+            select.appendChild(option);
         }
-        if(!isValidUrl(url))
-        {
-            let myerr = document.createElement("p");
-            myerr.innerText="A valid URL is required.";
-            err.appendChild(myerr);
-            err.style.visibility = 'visible';
-            had_err = true;
-        }
-        if(!had_err)
-        {
-            err.innerHTML = '';
-            err.style.visibility = 'hidden';
-        }
-    }
-    document.getElementById("form_button").addEventListener('mouseover', function(e){
-        e.stopPropagation();
-        validate();
     })
-
-   /* // pt event
-    var textbox = document.getElementById('textboxId');
-    var style = window.getComputedStyle(textbox);
-    if (style.getPropertyValue('outline') === 'none') {
-        console.log('The textbox is not focused');
-    } else {
-        console.log('The textbox is focused');
-    }
-*/
-
+    button.addEventListener('mouseover', function(e){
+        e.stopPropagation();
+        validate_save();
+    })
 }

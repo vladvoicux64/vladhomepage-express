@@ -1,124 +1,129 @@
 {
-  "categories": [
-    {
-      "name": "General purpose",
-      "articles": [
+    "categories": [
         {
-          "title": "Multithreaded parallelism in Numpy",
-          "url": "https://superfastpython.com/numpy-multithreaded-parallelism/",
-          "description": "Numpy uses BLAS, a linear algebra library which actually uses multithreading for some algorithms. This article presents how to exploit this."
+            "name": "General purpose",
+            "articles": [
+                {
+                    "title": "Multithreaded parallelism in Numpy",
+                    "url": "https://superfastpython.com/numpy-multithreaded-parallelism/",
+                    "description": "Numpy uses BLAS, a linear algebra library which actually uses multithreading for some algorithms. This article presents how to exploit this."
+                },
+                {
+                    "title": "Insights from writing an x86 emulator",
+                    "url": "https://www.timdbg.com/posts/useless-x86-trivia/",
+                    "description": "This article which TimDbg wrote presents some curiosities he discovered while writing an x86 emulator."
+                },
+                {
+                    "title": "Modern microprocessors explained",
+                    "url": "https://www.lighterra.com/papers/modernmicroprocessors/",
+                    "description": "This article explains modern microprocessor design, presenting many details which some may find interesting."
+                },
+                {
+                    "title": "Dispatch techniques for interpreters",
+                    "url": "http://www.cs.toronto.edu/~matz/dissertation/matzDissertation-latex2html/node6.html",
+                    "description": "This article presents some of the more popular dispatch techniques used in the context of emulating. It has been of particular usefulness for me while writing an RISC-V executor."
+                },
+                {
+                    "title": "Breaking into the Google Chrome password store on macOS",
+                    "url": "https://f002.backblazeb2.com/file/sec-news-backup/files/writeup/bufferovernoah.com/_2016_10_17_chrome_/index.html",
+                    "description": "This article presents a way to access the Google Chrome saved passwords on macOS, by exploiting some OS features."
+                },
+                {
+                    "title": "Take on some language design choices",
+                    "url": "https://michael.orlitzky.com/articles/greybeards_tomb:_the_lost_treasure_of_language_design.xhtml",
+                    "description": "This article critics some of the more popular programming languages in an ironic yet witty way."
+                },
+                {
+                    "title": "A radix sort paper #1",
+                    "url": "http://codercorner.com/RadixSortRevisited.htm",
+                    "description": "This paper showcases some techniques that increases radix sort's versatility."
+                },
+                {
+                    "title": "A radix sort paper #2",
+                    "url": "http://stereopsis.com/radix.html",
+                    "description": "This paper is a direct continuation of the first one that I included, but by another author, that continues by presenting some optimizations brought to Pierre's implementation."
+                }
+            ]
         },
         {
-          "title": "Insights from writing an x86 emulator",
-          "url": "https://www.timdbg.com/posts/useless-x86-trivia/",
-          "description": "This article which TimDbg wrote presents some curiosities he discovered while writing an x86 emulator."
+            "name": "Support vector machines",
+            "articles": [
+                {
+                    "title": "MIT class on SVMs",
+                    "url": "https://www.youtube.com/watch?v=_PwhiWxHK8o",
+                    "description": "This is a video of a MIT class where SVMs are presented and explained."
+                },
+                {
+                    "title": "Mathematics behind SVMs",
+                    "url": "https://shuzhanfan.github.io/2018/05/understanding-mathematics-behind-support-vector-machines/",
+                    "description": "This article explains the mathematics that stand behind SVMs."
+                }
+            ]
         },
         {
-          "title": "Modern microprocessors explained",
-          "url": "https://www.lighterra.com/papers/modernmicroprocessors/",
-          "description": "This article explains modern microprocessor design, presenting many details which some may find interesting."
+            "name": "The softmax activation function",
+            "articles": [
+                {
+                    "title": "Softmax derivative",
+                    "url": "https://stats.stackexchange.com/questions/453539/softmax-derivative-implementation",
+                    "description": "This is a SO thread that contains some really helpful advice for implementing the softmax derivative."
+                },
+                {
+                    "title": "Softmax usage explained",
+                    "url": "https://stats.stackexchange.com/questions/79454/softmax-layer-in-a-neural-network",
+                    "description": "This is a SO thread that explains how to properly use softmax in neural networks. It helped me understand how to propagate the derivative."
+                },
+                {
+                    "title": "Stable softmax",
+                    "url": "https://jaykmody.com/blog/stable-softmax/",
+                    "description": "This article is a combination of a softmax implementation and an explanation. I decided to also include this one because it mentions a few tricks to keep the implementation numerically stable. It also showcases how easily it integrates with the cross entropy loss."
+                },
+                {
+                    "title": "Softmax usefulness",
+                    "url": "https://ogunlao.github.io/2020/04/26/you_dont_really_know_softmax.html",
+                    "description": "This article presents why and where softmax is useful."
+                }
+            ]
         },
         {
-          "title": "Dispatch techniques for interpreters",
-          "url": "http://www.cs.toronto.edu/~matz/dissertation/matzDissertation-latex2html/node6.html",
-          "description": "This article presents some of the more popular dispatch techniques used in the context of emulating. It has been of particular usefulness for me while writing an RISC-V executor."
+            "name": "Convolutional neural networks",
+            "articles": [
+                {
+                    "title": "CNNs cheatsheet",
+                    "url": "https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-convolutional-neural-networks",
+                    "description": "This article presents a collection of information about CNNs from Stanford."
+                },
+                {
+                    "title": "Optimizing parameter count in CNNs",
+                    "url": "https://towardsdatascience.com/how-to-reduce-training-parameters-in-cnns-while-keeping-accuracy-99-a213034a9777",
+                    "description": "This article presents some fascinating techniques for reducing the parameter count in CNNs."
+                },
+                {
+                    "title": "Transfer learning exemplified with CNNs",
+                    "url": "https://www.tensorflow.org/tutorials/images/transfer_learning",
+                    "description": "This article is a useful tutorial on transfer learning. I decided to include it in the CNNs category because it exemplifies transfer learning on them."
+                }
+            ]
         },
         {
-          "title": "Breaking into the Google Chrome password store on macOS",
-          "url": "https://f002.backblazeb2.com/file/sec-news-backup/files/writeup/bufferovernoah.com/_2016_10_17_chrome_/index.html",
-          "description": "This article presents a way to access the Google Chrome saved passwords on macOS, by exploiting some OS features."
-        },
-        {
-          "title": "Take on some language design choices",
-          "url": "https://michael.orlitzky.com/articles/greybeards_tomb:_the_lost_treasure_of_language_design.xhtml",
-          "description": "This article critics some of the more popular programming languages in an ironic yet witty way."
-        },
-        {
-          "title": "A radix sort paper #1",
-          "url": "http://codercorner.com/RadixSortRevisited.htm",
-          "description": "This paper showcases some techniques that increases radix sort's versatility."
-        },
-        {
-          "title": "A radix sort paper #2",
-          "url": "http://stereopsis.com/radix.html",
-          "description": "This paper is a direct continuation of the first one that I included, but by another author, that continues by presenting some optimizations brought to Pierre's implementation."
+            "name": "Graphics",
+            "articles": [
+                {
+                    "title": "Texture tiling & swizzling",
+                    "url": "https://fgiesen.wordpress.com/2011/01/17/texture-tiling-and-swizzling/",
+                    "description": "This article explains tiling and swizzling of textures in graphics."
+                },
+                {
+                    "title": "Graphics programming blog",
+                    "url": "https://minus-ze.ro",
+                    "description": "Blog of a friend who posts mainly graphics programming related articles."
+                },
+                {
+                    "title": "Three.js shading language",
+                    "url": "https://github.com/mrdoob/three.js/wiki/Three.js-Shading-Language",
+                    "description": "This repository hosts the Three.js shading language, which provides an easy to use environment for shader programming."
+                }
+            ]
         }
-      ]
-    },
-    {
-      "name": "Support vector machines",
-      "articles": [
-        {
-          "title": "MIT class on SVMs",
-          "url": "https://www.youtube.com/watch?v=_PwhiWxHK8o",
-          "description": "This is a video of a MIT class where SVMs are presented and explained."
-        },
-        {
-          "title": "Mathematics behind SVMs",
-          "url": "https://shuzhanfan.github.io/2018/05/understanding-mathematics-behind-support-vector-machines/",
-          "description": "This article explains the mathematics that stand behind SVMs."
-        }
-      ]
-    },
-    {
-      "name": "The softmax activation function",
-      "articles": [
-        {
-          "title": "Softmax derivative",
-          "url": "https://stats.stackexchange.com/questions/453539/softmax-derivative-implementation",
-          "description": "This is a SO thread that contains some really helpful advice for implementing the softmax derivative."
-        },
-        {
-          "title": "Softmax usage explained",
-          "url": "https://stats.stackexchange.com/questions/79454/softmax-layer-in-a-neural-network",
-          "description": "This is a SO thread that explains how to properly use softmax in neural networks. It helped me understand how to propagate the derivative."
-        },
-        {
-          "title": "Stable softmax",
-          "url": "https://jaykmody.com/blog/stable-softmax/",
-          "description": "This article is a combination of a softmax implementation and an explanation. I decided to also include this one because it mentions a few tricks to keep the implementation numerically stable. It also showcases how easily it integrates with the cross entropy loss."
-        },
-        {
-          "title": "Softmax usefulness",
-          "url": "https://ogunlao.github.io/2020/04/26/you_dont_really_know_softmax.html",
-          "description": "This article presents why and where softmax is useful."
-        }
-      ]
-    },
-    {
-      "name": "Convolutional neural networks",
-      "articles": [
-        {
-          "title": "CNNs cheatsheet",
-          "url": "https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-convolutional-neural-networks",
-          "description": "This article presents a collection of information about CNNs from Stanford."
-        },
-        {
-          "title": "Optimizing parameter count in CNNs",
-          "url": "https://towardsdatascience.com/how-to-reduce-training-parameters-in-cnns-while-keeping-accuracy-99-a213034a9777",
-          "description": "This article presents some fascinating techniques for reducing the parameter count in CNNs."
-        },
-        {
-          "title": "Transfer learning exemplified with CNNs",
-          "url": "https://www.tensorflow.org/tutorials/images/transfer_learning",
-          "description": "This article is a useful tutorial on transfer learning. I decided to include it in the CNNs category because it exemplifies transfer learning on them."
-        }
-      ]
-    },
-    {
-      "name": "Graphics",
-      "articles": [
-        {
-          "title": "Texture tiling & swizzling",
-          "url": "https://fgiesen.wordpress.com/2011/01/17/texture-tiling-and-swizzling/",
-          "description": "This article explains tiling and swizzling of textures in graphics."
-        },
-        {
-          "title": "Graphics programming blog",
-          "url": "https://minus-ze.ro",
-          "description": "Blog of a friend who posts mainly graphics programming related articles."
-        }
-      ]
-    }
-  ]
+    ]
 }

@@ -37,8 +37,8 @@ window.onload = function()
                 clickable_span.classList.add('link');
 
                 const article_title = document.createElement("h3");
-                article_title.appendChild(clickable_span);
                 article_title.innerText = title;
+                article_title.appendChild(clickable_span);
 
                 const hyperlink = document.createElement("a");
                 hyperlink.href = url;
