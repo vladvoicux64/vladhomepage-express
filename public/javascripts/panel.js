@@ -82,10 +82,8 @@ window.onload = function(){
     }).then(articles =>
     {
         const select = document.getElementById("category");
-        let is_first = true;
         for (const category of articles.categories)
         {
-            let title = category.name;
             let option = document.createElement("option");
             option.value = category.name;
             option.innerText = category.name;
